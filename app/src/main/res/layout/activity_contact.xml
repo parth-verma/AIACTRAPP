@@ -33,11 +33,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+911121210161"
+                    android:autoLink="phone"
                     android:textSize="@dimen/contacts_number_size"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Principal's Office"/>
+                    android:text=""/>
 
             </LinearLayout>
 
@@ -50,6 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+911121210162"
+                    android:autoLink="phone"
                     android:textSize="@dimen/contacts_number_size"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -67,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+911121210164"
+                    android:autoLink="phone"
                     android:textSize="@dimen/contacts_number_size"
                     />
                 <TextView
@@ -85,6 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="+911121210169"
+                    android:autoLink="phone"
                     android:textSize="@dimen/contacts_number_size"
                     />
                 <TextView
