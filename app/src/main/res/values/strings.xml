@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Collegeapp</string>gi
+    <string name="app_name">Collegeapp</string>
+    <string name="principal_title">Pricipal's Office</string>
+    <string name="principal_number"></string>
 </resources>
