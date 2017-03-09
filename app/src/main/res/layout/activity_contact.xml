@@ -177,6 +177,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="goToActivity"
             android:src="@drawable/ic_navigation_black_24px"
             android:padding="@dimen/contacts_icon_margin"
             android:layout_gravity="end|center_horizontal" />
