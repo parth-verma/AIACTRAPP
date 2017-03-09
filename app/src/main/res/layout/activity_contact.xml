@@ -141,6 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_create_black_24px"
+            android:onClick="goToMail"
             android:padding="@dimen/contacts_icon_margin"
             android:layout_gravity="end|center_vertical" />
 
@@ -177,7 +178,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToActivity"
+            android:onClick="goToMap"
             android:src="@drawable/ic_navigation_black_24px"
             android:padding="@dimen/contacts_icon_margin"
             android:layout_gravity="end|center_horizontal" />
@@ -220,6 +221,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_open_in_browser_black_24px"
             android:padding="@dimen/contacts_icon_margin"
+            android:onClick="goToBrowser"
             android:layout_gravity="end|center_vertical" />
 
     </LinearLayout>
