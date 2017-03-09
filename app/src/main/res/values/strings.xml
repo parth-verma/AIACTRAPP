@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Collegeapp</string>
     <string name="principal_title">Principal\'s Office</string>
-    <string name="principal_number">h</string>
+    <string name="principal_phone">+911121210161</string>
+    <string name="admin_title">Admin Office</string>
+    <string name="admin_phone">+911121210162</string>
+    <string name="os_phone">+911121210164</string>
+    <string name="os_title">OS Office</string>
+    <string name="tnp_phone">+911121210169</string>
+    <string name="tnp_title">Training and Placement Office</string>
+    <string name="college_email">abc@gmail.com</string>
+    <string name="email_tag">E-Mail</string>
+    <string name="college_address">Geeta Colony, Delhi 110031</string>
+    <string name="address_tag">Address</string>
+    <string name="college_website">aiactr.ac.in</string>
+    <string name="website_tag">Website</string>
 </resources>
