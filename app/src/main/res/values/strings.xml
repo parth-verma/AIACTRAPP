@@ -14,4 +14,6 @@
     <string name="address_tag">Address</string>
     <string name="college_website">aiactr.ac.in</string>
     <string name="website_tag">Website</string>
+    <string name="long_latin">Hello</string>
+    <string name="collapsing_toolbar">Collapsing Toolbar</string>
 </resources>
