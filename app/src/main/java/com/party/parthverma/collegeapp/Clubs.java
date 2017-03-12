@@ -1,9 +1,13 @@
 package com.party.parthverma.collegeapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -25,9 +29,21 @@ public class Clubs extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
 
-        listView = (ListView)findViewById(R.id.list_of_clubs);
+        listView = (ListView) findViewById(R.id.list_of_clubs);
         final ArrayList<Club> clubList = Club.getClubs(this);
-        ClubsCardAdapter adapter = new ClubsCardAdapter(this,clubList);
+        ClubsCardAdapter adapter = new ClubsCardAdapter(this, clubList);
         listView.setAdapter(adapter);
+
+        final Context context = this;
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Intent intent = new Intent(context,ClubDetails.class);
+                intent.putExtra("position", position);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -25,7 +25,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Clubs"></activity>
+        <activity android:name=".Clubs"
+            android:label="Clubs"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".ClubDetails"
+            android:parentActivityName=".Clubs">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Clubs"/>git
+        </activity>
     </application>
 
 </manifest>
