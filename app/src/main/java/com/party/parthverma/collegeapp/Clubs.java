@@ -15,8 +15,8 @@ public class Clubs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clubs);
         listView = (ListView)findViewById(R.id.list_of_clubs);
-        String clubs[] = new String[]{"Saarang","Immortals","Antriksh","Constant Vision","SR-AIT","Abhivyakti","Manthan","Codeingineers"};
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,clubs);
+        final ArrayList<Club> clubList = Club.getClubs(this);
+        ClubsCardAdapter adapter = new ClubsCardAdapter(this,clubList);
         listView.setAdapter(adapter);
     }
 }

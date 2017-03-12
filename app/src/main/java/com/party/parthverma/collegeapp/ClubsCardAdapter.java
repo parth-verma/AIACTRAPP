@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,6 +57,12 @@ public class ClubsCardAdapter extends BaseAdapter {
         TextView type = (TextView) rowView.findViewById(R.id.club_type);
         ImageView logo = (ImageView) rowView.findViewById(R.id.club_image);
 
+        Club club = (Club) getItem(position);
+        name.setText(club.name);
+        type.setText(club.type);
+        logo.setImageResource(R.mipmap.ic_launcher);
+
+        return rowView;
 
     }
 
@@ -106,13 +114,29 @@ class Club {
             ex.printStackTrace();
             return null;
         }
-        JSONArray club = obj.getJSONArray("clubs");
+        JSONArray club;
+        try {
+
+
+            club = obj.getJSONArray("clubs");
+        }catch (JSONException ex)
+        {
+            ex.printStackTrace();
+            return null;
+        }
         ArrayList<Club> clubs = new ArrayList<Club>();
 
         for (int i=0;i< club.length() ;i++)
         {
-            JSONObject jo = club.getJSONObject(i);
-            Club x = new Club(jo.getString("name"),jo.getString("type"),jo.getString("desc"));
+            Club x;
+            try {
+                JSONObject jo = club.getJSONObject(i);
+                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"));
+            }catch (JSONException ex)
+            {
+                ex.printStackTrace();
+                return null;
+            }
             clubs.add(x);
         }
 
