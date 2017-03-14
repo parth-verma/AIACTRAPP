@@ -60,7 +60,7 @@ public class ClubsCardAdapter extends BaseAdapter {
         Club club = (Club) getItem(position);
         name.setText(club.name);
         type.setText(club.type);
-        logo.setImageResource(R.mipmap.ic_launcher);
+        logo.setImageResource(R.drawable.output);
 
         return rowView;
 

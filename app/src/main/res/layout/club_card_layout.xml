@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    android:background="@color/cardBackground">
+
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/club_image"/>
-    <LinearLayout
+        app:srcCompat="@drawable/output"
+        android:id="@+id/club_image"
+        android:paddingBottom="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:fadingEdge="none"
+        android:elevation="-20dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Club Name"
+        android:id="@+id/club_name"
+        android:textSize="30sp"/>
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/club_name"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/club_type"/>
-    </LinearLayout>
-
-
-
+        android:layout_height="wrap_content"
+        android:id="@+id/club_type"
+        android:text="Club Type"/>
 </LinearLayout>
