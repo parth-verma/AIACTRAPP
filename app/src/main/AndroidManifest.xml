@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.party.parthverma.collegeapp">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +35,7 @@
             android:parentActivityName=".Clubs">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Clubs"/>git
+                android:value=".Clubs"/>
         </activity>
     </application>
 

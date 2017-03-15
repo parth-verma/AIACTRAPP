@@ -60,7 +60,7 @@ public class ClubsCardAdapter extends BaseAdapter {
         Club club = (Club) getItem(position);
         name.setText(club.name);
         type.setText(club.type);
-        logo.setImageResource(R.drawable.output);
+        Picasso.with(context).load(club.image_loc).placeholder(R.drawable.output).into(logo);
 
         return rowView;
 
@@ -73,12 +73,12 @@ public class ClubsCardAdapter extends BaseAdapter {
 class Club {
     String name, type, desc, image_loc;
 
-    public Club(String name,String type,String desc)
+    public Club(String name,String type,String desc,String image_loc)
     {
         this.name=name;
         this.type=type;
         this.desc = desc;
-        image_loc = "";
+        this.image_loc = image_loc;
 
     }
     static private String loadJSONFromAsset(Context context) {
@@ -132,7 +132,7 @@ class Club {
             Club x;
             try {
                 JSONObject jo = club.getJSONObject(i);
-                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"));
+                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"),jo.getString("main_image_url"));
             }catch (JSONException ex)
             {
                 ex.printStackTrace();
