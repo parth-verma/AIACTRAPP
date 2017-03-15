@@ -25,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Contact.class);
         startActivity(intent);
     }
-
-
+    public void gotoActivityClubs(View view)
+    {
+        Intent intent= new Intent(this,Clubs.class);
+        startActivity(intent);
+    }
 }
