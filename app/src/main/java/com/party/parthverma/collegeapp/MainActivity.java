@@ -13,18 +13,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        about = (Button) findViewById(R.id.collapsingToolbar);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, About.class));
-            }
-        });
     }
     public void goToActivityContact (View view) {
         Intent intent = new Intent(this, Contact.class);
         startActivity(intent);
     }
-
-
+    public void gotoActivityClubs(View view)
+    {
+        Intent intent= new Intent(this,Clubs.class);
+        startActivity(intent);
+    }
 }
