@@ -7,6 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
 
 public class About extends AppCompatActivity {
 
@@ -22,6 +25,8 @@ public class About extends AppCompatActivity {
         collapsingToolbarLayout.setTitleEnabled(true);
         Context context = this;
         collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(context,R.color.colorPrimary));
+        ImageView imageView = (ImageView) findViewById(R.id.bgheader);
+        Picasso.with(this).load("http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg").into(imageView);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
