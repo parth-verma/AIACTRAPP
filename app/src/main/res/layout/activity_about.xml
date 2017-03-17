@@ -47,6 +47,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="fill_vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -65,16 +68,50 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5dp"
                         android:textSize="15dp"
-                        android:text="@string/collapsing_toolbar_c" />
+                        android:text="@string/collapsing_toolbar_c"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_marginTop="15dp"
+                        android:textSize="15dp"
+                        android:text="@string/collapsing_toolbar_c2"/>
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
         </LinearLayout>
+        </ScrollView>
 
 
     </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="goToActivityContact1"
+        android:src="@drawable/ic_call_black_24px"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/MyAppbar"
+        app:layout_anchorGravity="bottom|end"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
