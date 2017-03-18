@@ -1,0 +1,294 @@
+{
+  "faculty": [
+    {
+      "name": "Dr. Manoj Kumar",
+      "designation": "Professor(HOD), CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Vishal Bhatnagar",
+      "designation": "Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Shailender Kumar",
+      "designation": "Associate Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Nanhay Singh",
+      "designation": "Associate Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Vishal Gupta",
+      "designation": "Associate Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mrs. Shobha Bhatt",
+      "designation": "Associate Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Ram Shrinagar Rao",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Suresh Kumar",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. Arvind Kumar",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mrs. Bharti Nagpal",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Amita Jain",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mrs. Manju Khari",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. Prakash Rao Ragiri",
+      "designation": "Assistant Professor, CSE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Ravindra Kumar Sharma",
+      "designation": "Associate Professor(HOD), ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Binod Kumar Kanojia",
+      "designation": "Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Rashmi Gupta",
+      "designation": "Associate Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. M.Gandadharappa",
+      "designation": "Associate Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. Richa Bhatia",
+      "designation": "Associate Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. Manisha Khulbe",
+      "designation": "Associate Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Rajveer Singh",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. Dinesh Kumar Raheja",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. C.S. Vinitha",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. Manisha Bhari",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. Sanjeev Kumar",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. Garima Shrivastava",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem","qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Aarti Jain",
+      "designation": "Assistant Professor, ECE",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. G. Vedabouriswaran",
+      "designation": "Assistant Professor, Mechanical",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Mr. Avinash Kumar",
+      "designation": "Assistant Professor, Electrical",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. A.K. Jha",
+      "designation": "Professor(HOD), Applied Physics",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Mansi Singhi",
+      "designation": "Assistant Professor, Applied Sciences",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Dr. Manjari",
+      "designation": "Assistant Professor, Applied Sciences",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    },
+    {
+      "name": "Ms. Sunita",
+      "designation": "IIT Delhi",
+      "description": "Lorem",
+      "qualification": "Qualification",
+      "mail": "abc@gmail.com",
+      "phone": "+917011845423",
+      "url": "http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg"
+    }
+
+  ]
+}
+
+
