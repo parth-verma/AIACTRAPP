@@ -57,7 +57,7 @@
             android:paddingTop="16dp">
 
             <TextView
-                android:id="@+id/textview"
+                android:id="@+id/aboutText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:onClick="goToActivityContact1"
-        android:src="@drawable/ic_call_black_24px"
+        android:src="@drawable/ic_call_white_24px"
         android:layout_margin="16dp"
         app:layout_anchor="@id/MyAppbar"
         app:layout_anchorGravity="bottom|end"/>
