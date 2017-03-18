@@ -49,22 +49,42 @@ public class FacultyCardAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = inflater.inflate(R.layout.faculty_layout, parent, false);
-        TextView name = (TextView) rowView.findViewById(R.id.fac_name);
-        TextView desg = (TextView) rowView.findViewById(R.id.fac_desg);
-        TextView desc = (TextView) rowView.findViewById(R.id.faculty_desc);
-        TextView qual = (TextView) rowView.findViewById(R.id.faculty_qual);
-        TextView mail = (TextView) rowView.findViewById(R.id.faculty_mail);
-        TextView phone = (TextView) rowView.findViewById(R.id.faculty_phone);
-        ImageView logo = (ImageView) rowView.findViewById(R.id.club_image);
+        ViewHolder holder;
+        if(convertView == null) {
+
+            // 2
+            convertView = inflater.inflate(R.layout.faculty_layout, parent, false);
+
+            // 3
+            holder = new ViewHolder();
+            holder.facultyImage = (ImageView) convertView.findViewById(R.id.faculty_image);
+            holder.name= (TextView) convertView.findViewById(R.id.fac_name);
+            holder.designation = (TextView) convertView.findViewById(R.id.fac_desg);
+
+            // 4
+            convertView.setTag(holder);
+        }
+        else{
+            // 5
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        TextView name = holder.name;
+        TextView desg = holder.designation;
+        ImageView logo = holder.facultyImage;
 
         Faculty faculty = (Faculty) getItem(position);
         name.setText(faculty.name);
-        desg.setText(faculty.desg);
+        desg.setText(faculty.designation);
         Picasso.with(context).load(faculty.image_loc).placeholder(R.drawable.output).into(logo);
 
-        return rowView;
+        return convertView;
 
+    }
+    private static class ViewHolder {
+        public TextView name;
+        public TextView designation;
+        public ImageView facultyImage;
     }
 }
 
@@ -73,15 +93,15 @@ public class FacultyCardAdapter extends BaseAdapter{
 
 
 class Faculty {
-    String name, desg, desc, qual, mail, phone,image_loc;
+    String name, designation, description, qualification, email, phone,image_loc;
 
-    public Faculty(String name,String desg,String desc, String qual, String mail, String phone, String image_loc)
+    public Faculty(String name,String designation,String description, String qualification, String email, String phone, String image_loc)
     {
         this.name = name;
-        this.desg = desg;
-        this.desc = desc;
-        this.qual = qual;
-        this.mail = mail;
+        this.designation = designation;
+        this.description = description;
+        this.qualification = qualification;
+        this.email = email;
         this.phone = phone;
         this.image_loc = image_loc;
 
@@ -120,11 +140,11 @@ class Faculty {
             ex.printStackTrace();
             return null;
         }
-        JSONArray facul;
+        JSONArray faculty;
         try {
 
 
-            facul = obj.getJSONArray("faculty");
+            faculty = obj.getJSONArray("faculty");
         }catch (JSONException ex)
         {
             ex.printStackTrace();
@@ -132,12 +152,12 @@ class Faculty {
         }
         ArrayList<Faculty> faculties = new ArrayList<Faculty>();
 
-        for (int i=0;i< facul.length() ;i++)
+        for (int i=0;i< faculty.length() ;i++)
         {
             Faculty x;
             try {
-                JSONObject jo = facul.getJSONObject(i);
-                x = new Faculty(jo.getString("name"), jo.getString("designation"), jo.getString("description"), jo.getString("qualification"), jo.getString("mail"), jo.getString("phone"), jo.getString("url"));
+                JSONObject jo = faculty.getJSONObject(i);
+                x = new Faculty(jo.getString("name"), jo.getString("designation"), jo.getString("description"), jo.getString("qualification"), jo.getString("mail"), jo.getString("phone"), jo.getString("image_url"));
             }catch (JSONException ex)
             {
                 ex.printStackTrace();

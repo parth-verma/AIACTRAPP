@@ -8,12 +8,12 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
 
-        android:layout_height="225dp"
+        android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         card_view:cardCornerRadius="2dp"
         card_view:cardElevation="5dp">
 
@@ -30,29 +30,31 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/output"
-                android:id="@+id/club_image"
-                android:layout_marginBottom="24dp"
+                android:src="@drawable/output"
+                android:id="@+id/faculty_image"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
                 android:fadingEdge="none"
 
                 />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Club Name"
+                android:text="Faculty Name"
                 android:id="@+id/fac_name"
-                android:textSize="24sp"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="16dp"/>
+                android:textSize="20sp"
+                android:paddingTop="24dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="12dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/fac_desg"
                 android:textSize="14sp"
-                android:text="Club Type"
-                android:layout_marginLeft="16dp"/>
+                android:text="Faculty Post"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

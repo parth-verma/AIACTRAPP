@@ -20,13 +20,17 @@ public class Faculties extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faculties);
-
-
-
-        gridView = (GridView) findViewById(R.id.list_of_clubs);
+        gridView = (GridView) findViewById(R.id.faculty_list);
         final ArrayList<Faculty> clubList = Faculty.getFaculties(this);
         FacultyCardAdapter adapter = new FacultyCardAdapter(this, clubList);
         gridView.setAdapter(adapter);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle("Faculty Profile");
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
 
         final Context context = this;
 

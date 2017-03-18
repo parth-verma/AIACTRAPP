@@ -1,6 +1,5 @@
 package com.party.parthverma.collegeapp;
 
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +10,8 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class FacultyDetails extends AppCompatActivity {
-    TextView desc,name,desg,qual,mail,phone;
-    ImageView clubImage;
+    TextView description,name, designation, qualification,email,phone;
+    ImageView facultyImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +21,26 @@ public class FacultyDetails extends AppCompatActivity {
         Faculty faculty = Faculty.getFaculties(this).get(position);
 
         name = (TextView) findViewById(R.id.faculty_name);
-        desg = (TextView) findViewById(R.id.faculty_desg);
-        qual = (TextView) findViewById(R.id.faculty_qual);
-        mail = (TextView) findViewById(R.id.faculty_mail);
+        designation = (TextView) findViewById(R.id.faculty_desg);
+        qualification = (TextView) findViewById(R.id.faculty_qual);
+        email = (TextView) findViewById(R.id.faculty_mail);
         phone = (TextView) findViewById(R.id.faculty_phone);
-        desc = (TextView) findViewById(R.id.faculty_desc);
-        clubImage = (ImageView) findViewById(R.id.club_image);
+        description = (TextView) findViewById(R.id.faculty_desc);
+        facultyImage = (ImageView) findViewById(R.id.faculty_image);
 
-        desc.setText(faculty.desc);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle(faculty.name);
+
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+
+        description.setText(faculty.description);
         name.setText(faculty.name);
-        desg.setText(faculty.desg);
-        qual.setText(faculty.qual);
-        mail.setText(faculty.mail);
+        designation.setText(faculty.designation);
+        qualification.setText(faculty.qualification);
+        email.setText(faculty.email);
         phone.setText(faculty.phone);
-        Picasso.with(this).load(faculty.image_loc).placeholder(R.drawable.output).into(clubImage);
+        Picasso.with(this).load(faculty.image_loc).placeholder(R.drawable.output).into(facultyImage);
     }
 }
