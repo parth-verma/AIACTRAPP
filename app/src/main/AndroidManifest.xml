@@ -36,7 +36,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".About"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 
         <activity android:name=".ClubDetails"
             android:parentActivityName=".Clubs">
