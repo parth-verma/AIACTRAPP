@@ -52,18 +52,42 @@ public class ClubsCardAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = inflater.inflate(R.layout.club_card_layout, parent, false);
-        TextView name = (TextView) rowView.findViewById(R.id.club_name);
-        TextView type = (TextView) rowView.findViewById(R.id.club_type);
-        ImageView logo = (ImageView) rowView.findViewById(R.id.club_image);
+        ViewHolder holder;
+        if(convertView == null) {
+
+            // 2
+            convertView = inflater.inflate(R.layout.club_card_layout, parent, false);
+
+            // 3
+            holder = new ViewHolder();
+            holder.clubImage = (ImageView) convertView.findViewById(R.id.club_image);
+            holder.name= (TextView) convertView.findViewById(R.id.club_name);
+            holder.type = (TextView) convertView.findViewById(R.id.club_type);
+
+            // 4
+            convertView.setTag(holder);
+        }
+        else{
+            // 5
+            holder = (ViewHolder) convertView.getTag();
+        }
+        TextView name = holder.name;
+        TextView type = holder.type;
+        ImageView logo = holder.clubImage;
 
         Club club = (Club) getItem(position);
         name.setText(club.name);
         type.setText(club.type);
         Picasso.with(context).load(club.image_loc).placeholder(R.drawable.output).into(logo);
 
-        return rowView;
+        return convertView;
 
+    }
+
+    private static class ViewHolder {
+        public TextView name;
+        public TextView type;
+        public ImageView clubImage;
     }
 
 
