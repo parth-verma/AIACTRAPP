@@ -26,17 +26,17 @@ public class About extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.MyToolbar);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapse_toolbar);
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.CollapsingToolbarLayout1);
         collapsingToolbarLayout.setTitle("AIACTR");
         collapsingToolbarLayout.setTitleEnabled(true);
         Context context = this;
         collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(context, R.color.colorPrimary));
-        ImageView imageView = (ImageView) findViewById(R.id.bgheader);
+        ImageView imageView = (ImageView) findViewById(R.id.college_image);
         Picasso.with(this).load("http://www.planwallpaper.com/static/images/HD-Wallpapers1_FOSmVKg.jpeg").into(imageView);
-        TextView about = (TextView) findViewById(R.id.aboutText);
+        TextView about = (TextView) findViewById(R.id.about);
         about.setText(get_about(this));
 
 
