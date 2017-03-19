@@ -1,6 +1,7 @@
 package com.party.parthverma.collegeapp;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class FacultyCardAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        Log.d("Parth","Inside getView");
         ViewHolder holder;
         if(convertView == null) {
 
@@ -85,6 +87,30 @@ public class FacultyCardAdapter extends BaseAdapter{
         public TextView name;
         public TextView designation;
         public ImageView facultyImage;
+    }
+    public void measureItems(int columnWidth) {
+        Log.d("Parth","Inside measureItems");
+        // Obtain system inflater
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        // Inflate temp layout object for measuring
+        GridViewItemLayout itemView = (GridViewItemLayout)inflater.inflate(R.layout.faculty_layout, null);
+
+        // Create measuring specs
+        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(columnWidth, View.MeasureSpec.EXACTLY);
+        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+
+        // Loop through each data object
+        for(int index = 0; index < data_src.size(); index++) {
+            Faculty item = data_src.get(index);
+
+            // Set position and data
+            itemView.setPosition(index);
+            itemView.updateItemDisplay(item);
+
+            // Force measuring
+            itemView.requestLayout();
+            itemView.measure(widthMeasureSpec, heightMeasureSpec);
+        }
     }
 }
 

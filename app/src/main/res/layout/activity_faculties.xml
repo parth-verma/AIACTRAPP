@@ -17,16 +17,17 @@
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-    <GridView
+    <com.party.parthverma.collegeapp.AutoMeasureGridView
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:drawingCacheQuality="high"
-        android:verticalSpacing="5dp"
         android:numColumns="2"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="16dp"
         android:gravity="center"
         android:id="@+id/faculty_list"
         >
 
-    </GridView>
+    </com.party.parthverma.collegeapp.AutoMeasureGridView>
 </LinearLayout>
