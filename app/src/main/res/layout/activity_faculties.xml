@@ -18,10 +18,10 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
     <GridView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:drawingCacheQuality="high"
-        android:horizontalSpacing="16dp"
         android:verticalSpacing="5dp"
         android:numColumns="2"
         android:gravity="center"
