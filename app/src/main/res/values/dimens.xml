@@ -5,4 +5,5 @@
     <dimen name="contacts_icon_margin">20dp</dimen>
     <dimen name="contacts_number_size">20sp</dimen>
     <dimen name="contacts_card_bottom_margin">10dp</dimen>
+    <integer name="numColumns">2</integer>
 </resources>

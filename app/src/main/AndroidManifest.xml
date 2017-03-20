@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +25,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Clubs"
+        <activity
+            android:name=".Clubs"
             android:label="Clubs"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -40,11 +40,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
-        <activity android:name=".ClubDetails"
+        <activity
+            android:name=".ClubDetails"
+
             android:parentActivityName=".Clubs">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Clubs"/>
+                android:value=".Clubs" />
+        </activity>
+        <activity android:name=".Faculties"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".FacultyDetails"
+            android:parentActivityName=".Faculties">
         </activity>
     </application>
 

@@ -27,4 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, About.class);
         startActivity(intent);
     }
+
+    public void goToActivityFaculty (View view) {
+        Intent intent = new Intent(this, Faculties.class);
+        startActivity(intent);
+    }
 }
