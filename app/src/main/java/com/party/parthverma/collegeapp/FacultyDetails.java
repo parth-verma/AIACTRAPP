@@ -1,5 +1,6 @@
 package com.party.parthverma.collegeapp;
 
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import com.squareup.picasso.Picasso;
 public class FacultyDetails extends AppCompatActivity {
     TextView description,name, designation, qualification,email,phone;
     ImageView facultyImage;
+    Toolbar toolbar;
+    CollapsingToolbarLayout collapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +30,17 @@ public class FacultyDetails extends AppCompatActivity {
         phone = (TextView) findViewById(R.id.faculty_phone);
         description = (TextView) findViewById(R.id.faculty_desc);
         facultyImage = (ImageView) findViewById(R.id.faculty_image);
+        toolbar = (Toolbar) findViewById(R.id.toolbar2);
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.CollapsingToolbarLayout2);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+
+        collapsingToolbarLayout.setTitle(faculty.name);
+
+
+        /*Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle(faculty.name);
+        getSupportActionBar().setTitle(faculty.name);*/
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
