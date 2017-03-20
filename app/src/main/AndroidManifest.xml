@@ -50,10 +50,22 @@
         </activity>
         <activity
             android:name=".Faculties"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FacultyDetails"
-            android:parentActivityName=".Faculties"></activity>
+            android:parentActivityName=".Faculties" />
+        <activity
+            android:name=".Syllabus"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
+
 
 </manifest>

@@ -19,9 +19,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-/**
- * Created by parthverma on 11/03/17.
- */
 
 public class ClubsCardAdapter extends BaseAdapter {
 
