@@ -1,6 +1,8 @@
 package com.party.parthverma.collegeapp;
 
+import android.content.Context;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,6 +30,8 @@ public class ClubDetails extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.CollapsingToolbarLayout1);
+        Context context = this;
+        collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(context, R.color.colorPrimary));
 
         setSupportActionBar(toolbar);
 

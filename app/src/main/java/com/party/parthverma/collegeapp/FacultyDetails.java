@@ -1,6 +1,8 @@
 package com.party.parthverma.collegeapp;
 
+import android.content.Context;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,15 +34,13 @@ public class FacultyDetails extends AppCompatActivity {
         facultyImage = (ImageView) findViewById(R.id.faculty_image);
         toolbar = (Toolbar) findViewById(R.id.toolbar2);
         collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.CollapsingToolbarLayout2);
+        Context context = this;
+        collapsingToolbarLayout.setContentScrimColor(ContextCompat.getColor(context, R.color.colorPrimary));
 
         setSupportActionBar(toolbar);
 
         collapsingToolbarLayout.setTitle(faculty.name);
 
-
-        /*Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle(faculty.name);*/
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);

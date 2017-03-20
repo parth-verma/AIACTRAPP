@@ -48,12 +48,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".Clubs" />
         </activity>
+
         <activity
             android:name=".Faculties"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
+
         <activity
             android:name=".FacultyDetails"
-            android:parentActivityName=".Faculties"></activity>
+            android:parentActivityName=".Faculties">
+        </activity>
     </application>
 
 </manifest>
