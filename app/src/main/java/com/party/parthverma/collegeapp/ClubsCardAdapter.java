@@ -78,7 +78,7 @@ public class ClubsCardAdapter extends BaseAdapter {
         Club club = (Club) getItem(position);
         name.setText(club.name);
         type.setText(club.type);
-        Picasso.with(context).load(club.image_loc).placeholder(R.drawable.output).into(logo);
+        Picasso.with(context).load(club.image_loc).into(logo);
 
         return convertView;
 

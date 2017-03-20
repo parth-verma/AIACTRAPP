@@ -41,6 +41,6 @@ public class FacultyDetails extends AppCompatActivity {
         qualification.setText(faculty.qualification);
         email.setText(faculty.email);
         phone.setText(faculty.phone);
-        Picasso.with(this).load(faculty.image_loc).placeholder(R.drawable.output).into(facultyImage);
+        Picasso.with(this).load(faculty.image_loc).into(facultyImage);
     }
 }

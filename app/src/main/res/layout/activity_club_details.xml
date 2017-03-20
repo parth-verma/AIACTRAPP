@@ -28,7 +28,6 @@
                     android:id="@+id/club_image"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/output"
                     />
 
                 <android.support.v7.widget.Toolbar

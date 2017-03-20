@@ -27,7 +27,6 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/output"
         android:id="@+id/club_image"
         android:layout_marginBottom="24dp"
         android:adjustViewBounds="true"

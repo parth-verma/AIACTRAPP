@@ -78,7 +78,7 @@ public class FacultyCardAdapter extends BaseAdapter{
         Faculty faculty = (Faculty) getItem(position);
         name.setText(faculty.name);
         desg.setText(faculty.designation);
-        Picasso.with(context).load(faculty.image_loc).placeholder(R.drawable.output).into(logo);
+        Picasso.with(context).load(faculty.image_loc).into(logo);
 
         return convertView;
 

@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/output"
+
                 android:id="@+id/faculty_image"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"

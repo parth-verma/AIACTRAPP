@@ -29,7 +29,6 @@
                     android:id="@+id/college_image"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/output"
                     />
 
 
