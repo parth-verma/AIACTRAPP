@@ -59,10 +59,23 @@
         </activity>
         <activity
             android:name=".Faculties"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".FacultyDetails"
-            android:parentActivityName=".Faculties"></activity>
+            android:parentActivityName=".Faculties"/>
+        <service
+            android:name=".NotificationService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".NotificationID">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
     </application>
 
