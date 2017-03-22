@@ -1,0 +1,58 @@
+{
+  "directory": [
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    }
+  ]
+}
