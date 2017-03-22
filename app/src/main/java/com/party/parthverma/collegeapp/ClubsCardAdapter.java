@@ -78,7 +78,7 @@ public class ClubsCardAdapter extends BaseAdapter {
         Club club = (Club) getItem(position);
         name.setText(club.name);
         type.setText(club.type);
-        Picasso.with(context).load(club.image_loc).into(logo);
+        Picasso.with(context).load(club.main_image_url).into(logo);
 
         return convertView;
 
@@ -95,14 +95,19 @@ public class ClubsCardAdapter extends BaseAdapter {
 
 
 class Club {
-    String name, type, desc, image_loc;
+    String name, type, desc, main_image_url,phone;
+
+    Club()
+    {
+
+    }
 
     public Club(String name,String type,String desc,String image_loc)
     {
         this.name=name;
         this.type=type;
         this.desc = desc;
-        this.image_loc = image_loc;
+        this.main_image_url = image_loc;
 
     }
     static private String loadJSONFromAsset(Context context) {
