@@ -121,6 +121,8 @@ public class FacultyCardAdapter extends BaseAdapter{
 class Faculty {
     String name, designation, description, qualification, email, phone,image_loc;
 
+    public Faculty()
+    {}
     public Faculty(String name,String designation,String description, String qualification, String email, String phone, String image_loc)
     {
         this.name = name;

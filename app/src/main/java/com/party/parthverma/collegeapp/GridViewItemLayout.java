@@ -3,6 +3,7 @@ package com.party.parthverma.collegeapp;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,13 +52,14 @@ public class GridViewItemLayout extends LinearLayout {
     public static void initItemLayout(int numColumns, int itemCount) {
         mNumColumns = numColumns;
         mMaxRowHeight = new int[itemCount];
+        Log.d("init",Integer.toString(mMaxRowHeight.length));
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         // Do not calculate max height if column count is only one
-        if(mNumColumns <= 1 || mMaxRowHeight == null) {
+        if(mNumColumns <= 1 || mMaxRowHeight == null || mMaxRowHeight.length==0) {
             return;
         }
 
@@ -81,6 +83,7 @@ public class GridViewItemLayout extends LinearLayout {
 
         name.setText(item.name);
         desg.setText(item.designation);
+        Log.d("update",item.image_loc);
 
         Picasso.with(getContext()).load(item.image_loc).into(image);
 
