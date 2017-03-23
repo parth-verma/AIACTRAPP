@@ -27,7 +27,7 @@ public class Directory extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.list_of_directory);
         final ArrayList<Direct> directoryList = Direct.getDirectory(this);
-        ClubsCardAdapter adapter = new ClubsCardAdapter(this, directoryList);
+        DirectoryAdapter adapter = new DirectoryAdapter(this, directoryList);
         listView.setAdapter(adapter);
     }
 

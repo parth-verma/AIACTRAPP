@@ -35,6 +35,15 @@ public class DirectoryAdapter extends BaseAdapter {
     public int getCount() {
         return data_src.size();
     }
+    @Override
+    public Object getItem(int position) {
+        return data_src.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
 
     @Override
@@ -43,13 +52,14 @@ public class DirectoryAdapter extends BaseAdapter {
         if(convertView == null) {
 
             // 2
-            convertView = inflater.inflate(R.layout.club_card_layout, parent, false);
+            convertView = inflater.inflate(R.layout.directory_layout, parent, false);
 
             // 3
             holder = new ViewHolder();
-            holder.clubImage = (ImageView) convertView.findViewById(R.id.club_image);
-            holder.name= (TextView) convertView.findViewById(R.id.club_name);
-            holder.type = (TextView) convertView.findViewById(R.id.club_type);
+            holder.name= (TextView) convertView.findViewById(R.id.directory_name);
+            holder.room_number = (TextView) convertView.findViewById(R.id.room_number);
+            holder.floor= (TextView) convertView.findViewById(R.id.floor);
+            holder.block = (TextView) convertView.findViewById(R.id.block);
 
             // 4
             convertView.setTag(holder);
@@ -59,13 +69,15 @@ public class DirectoryAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         TextView name = holder.name;
-        TextView type = holder.type;
-        ImageView logo = holder.clubImage;
+        TextView room_number = holder.room_number;
+        TextView floor = holder.floor;
+        TextView block = holder.block;
 
-        Club club = (Club) getItem(position);
-        name.setText(club.name);
-        type.setText(club.type);
-        Picasso.with(context).load(club.image_loc).into(logo);
+        Direct directory = (Direct) getItem(position);
+        name.setText(directory.name);
+        room_number.setText(directory.room_number);
+        floor.setText(directory.floor);
+        block.setText(directory.block);
 
         return convertView;
 
@@ -73,8 +85,9 @@ public class DirectoryAdapter extends BaseAdapter {
 
     private static class ViewHolder {
         public TextView name;
-        public TextView type;
-        public ImageView clubImage;
+        public TextView room_number;
+        public TextView floor;
+        public TextView block;
     }
 
 
@@ -82,21 +95,21 @@ public class DirectoryAdapter extends BaseAdapter {
 
 
 class Direct {
-    String name, type, desc, image_loc;
+    String name, room_number, floor, block;
 
-    public Club(String name,String type,String desc,String image_loc)
+    public Direct(String name,String room_number,String floor,String block)
     {
         this.name=name;
-        this.type=type;
-        this.desc = desc;
-        this.image_loc = image_loc;
+        this.room_number=room_number;
+        this.floor = floor;
+        this.block = block;
 
     }
     static private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
 
-            InputStream is = context.getAssets().open("clubs.json");
+            InputStream is = context.getAssets().open("directory.json");
 
             int size = is.available();
 
@@ -117,7 +130,7 @@ class Direct {
 
     }
 
-    public static ArrayList<Club> getClubs(Context context)
+    public static ArrayList<Direct> getDirectory(Context context)
     {
         JSONObject obj;
         try {
@@ -126,32 +139,32 @@ class Direct {
             ex.printStackTrace();
             return null;
         }
-        JSONArray club;
+        JSONArray directory;
         try {
 
 
-            club = obj.getJSONArray("clubs");
+            directory = obj.getJSONArray("directory");
         }catch (JSONException ex)
         {
             ex.printStackTrace();
             return null;
         }
-        ArrayList<Club> clubs = new ArrayList<Club>();
+        ArrayList<Direct> directories = new ArrayList<Direct>();
 
-        for (int i=0;i< club.length() ;i++)
+        for (int i=0;i< directory.length() ;i++)
         {
-            Club x;
+            Direct x;
             try {
-                JSONObject jo = club.getJSONObject(i);
-                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"),jo.getString("main_image_url"));
+                JSONObject jo = directory.getJSONObject(i);
+                x = new Direct(jo.getString("name"), jo.getString("room_number"), jo.getString("floor"),jo.getString("block"));
             }catch (JSONException ex)
             {
                 ex.printStackTrace();
                 return null;
             }
-            clubs.add(x);
+            directories.add(x);
         }
 
-        return clubs;
+        return directories;
     }
 }

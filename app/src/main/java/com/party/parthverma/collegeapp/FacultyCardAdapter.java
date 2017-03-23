@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class FacultyCardAdapter extends BaseAdapter{
+public class FacultyCardAdapter extends BaseAdapter {
 
 
     private Context context;
@@ -47,6 +48,7 @@ public class FacultyCardAdapter extends BaseAdapter{
     public long getItemId(int position) {
         return position;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -112,6 +114,7 @@ public class FacultyCardAdapter extends BaseAdapter{
             itemView.measure(widthMeasureSpec, heightMeasureSpec);
         }
     }
+
 }
 
 

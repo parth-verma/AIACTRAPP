@@ -1,10 +1,10 @@
 {
   "directory": [
     {
-      "name": "Room Name",
-      "room_number": "Room Number",
-      "floor": "Floor",
-      "block": "Block"
+      "name": "CSE 1st YEar",
+      "room_number": "H-201",
+      "floor": "1st",
+      "block": "H"
     },
     {
       "name": "Room Name",
