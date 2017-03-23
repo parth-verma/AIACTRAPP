@@ -41,7 +41,7 @@ public class ClubDetails extends AppCompatActivity {
         ab.setDisplayHomeAsUpEnabled(true);
 
         desc.setText(club.desc);
-        Picasso.with(this).load(club.image_loc).into(clubImage);
+        Picasso.with(this).load(club.main_image_url).into(clubImage);
 
 
 
