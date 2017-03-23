@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Collegeapp</string>
+    <string name="default_web_client_id">599115953911-q8ggj950ut8i68i6tvsgu9aspocscqq1.apps.googleusercontent.com</string>
     <string name="principal_title">Principal\'s Office</string>
     <string name="principal_phone">+911121210161</string>
     <string name="admin_title">Admin Office</string>
