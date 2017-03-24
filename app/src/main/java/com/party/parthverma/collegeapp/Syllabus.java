@@ -75,9 +75,22 @@ public class Syllabus extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch(position) {
+                case 0:
+                    return CseFragment.newInstance(position+1);
+
+
+                case 1:
+                    return EceFragment.newInstance(position+1);
+
+
+                case 2:
+                    return TechFragment.newInstance(position+1);
+
+
+            }
+            //return PlaceholderFragment.newInstance(position + 1);
+            return null;
         }
 
         @Override
@@ -103,7 +116,7 @@ public class Syllabus extends AppCompatActivity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class CseFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
@@ -114,21 +127,84 @@ public class Syllabus extends AppCompatActivity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
+        public static CseFragment newInstance(int sectionNumber) {
+            CseFragment fragment = new CseFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
             return fragment;
         }
 
-        public PlaceholderFragment() {
+        public CseFragment() {
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.syllabus_fragment, container, false);
+            View rootView = inflater.inflate(R.layout.activity_cse, container, false);
+            return rootView;
+        }
+    }
+
+
+    public static class EceFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static EceFragment newInstance(int sectionNumber) {
+            EceFragment fragment = new EceFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public EceFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.activity_ece, container, false);
+            return rootView;
+        }
+    }
+
+
+
+    public static class TechFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static TechFragment newInstance(int sectionNumber) {
+            TechFragment fragment = new TechFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public TechFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.activity_tech, container, false);
             return rootView;
         }
     }
