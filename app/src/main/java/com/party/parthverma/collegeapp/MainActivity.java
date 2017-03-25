@@ -1,5 +1,6 @@
 package com.party.parthverma.collegeapp;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToActivityFaculty (View view) {
         Intent intent = new Intent(this, Faculties.class);
+        startActivity(intent);
+    }
+    public void goToActivityNotification (View view) {
+        Intent intent = new Intent(this, Notifications.class);
         startActivity(intent);
     }
 
