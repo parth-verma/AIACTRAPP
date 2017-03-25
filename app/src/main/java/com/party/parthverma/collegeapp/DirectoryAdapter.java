@@ -59,7 +59,6 @@ public class DirectoryAdapter extends BaseAdapter {
             holder.name= (TextView) convertView.findViewById(R.id.directory_name);
             holder.room_number = (TextView) convertView.findViewById(R.id.room_number);
             holder.floor= (TextView) convertView.findViewById(R.id.floor);
-            holder.block = (TextView) convertView.findViewById(R.id.block);
 
             // 4
             convertView.setTag(holder);
@@ -71,13 +70,11 @@ public class DirectoryAdapter extends BaseAdapter {
         TextView name = holder.name;
         TextView room_number = holder.room_number;
         TextView floor = holder.floor;
-        TextView block = holder.block;
 
         Direct directory = (Direct) getItem(position);
         name.setText(directory.name);
         room_number.setText(directory.room_number);
         floor.setText(directory.floor);
-        block.setText(directory.block);
 
         return convertView;
 
@@ -87,7 +84,6 @@ public class DirectoryAdapter extends BaseAdapter {
         public TextView name;
         public TextView room_number;
         public TextView floor;
-        public TextView block;
     }
 
 
