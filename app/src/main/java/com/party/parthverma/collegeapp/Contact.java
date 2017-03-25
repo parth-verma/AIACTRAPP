@@ -1,5 +1,6 @@
 package com.party.parthverma.collegeapp;
 
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -9,6 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.MimeTypeMap;
+import android.webkit.URLUtil;
+import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Locale;
@@ -16,6 +21,7 @@ import java.util.Locale;
 import static java.net.Proxy.Type.HTTP;
 
 public class Contact extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +33,8 @@ public class Contact extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+
     }
     // For Going to Map
     public void goToMap(View view) {
