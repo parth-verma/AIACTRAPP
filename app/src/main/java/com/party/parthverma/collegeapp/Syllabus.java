@@ -2,6 +2,7 @@ package com.party.parthverma.collegeapp;
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
@@ -15,6 +16,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -360,7 +362,7 @@ public class Syllabus extends AppCompatActivity {
             b1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece1));
+                    /*DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece1));
                     request.setTitle("ECE 1st Semester");
                     //request.setDescription("");
                     request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
@@ -373,7 +375,15 @@ public class Syllabus extends AppCompatActivity {
 
                     DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
                     manager.enqueue(request);
-                    Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();*/
+
+                    //Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ece1));
+                    //startActivity(browserIntent);
+                    /*Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(Uri.parse( "http://docs.google.com/viewer?url=" + ece1), "text/html");
+                    startActivity(intent);*/
+                    Intent intent = new Intent( v.getContext(), Web.class);
+                    startActivity(intent);
                 }
             });
 
