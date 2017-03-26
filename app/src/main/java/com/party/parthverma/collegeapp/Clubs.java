@@ -39,7 +39,6 @@ public class Clubs extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference clubs = database.getReference("clubs");
         clubs.addValueEventListener(new ValueEventListener() {

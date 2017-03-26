@@ -100,7 +100,6 @@ public class Notifications extends AppCompatActivity {
             View view =  inflater.inflate(R.layout.notifis_from_principal, container, false);
             listView = (ListView) view.findViewById(R.id.notif_list);
             notifications = new ArrayList<>();
-            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference notifs = database.getReference("notifications/principal");
             notifs.addValueEventListener(new ValueEventListener() {

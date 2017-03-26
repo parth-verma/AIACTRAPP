@@ -32,7 +32,6 @@ public class Faculties extends AppCompatActivity {
         setContentView(R.layout.activity_faculties);
         faculty_list = new ArrayList<>(1);
         gridView = (GridView) findViewById(R.id.faculty_list);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference faculty = database.getReference("faculty");
 
