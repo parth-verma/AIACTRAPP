@@ -1,5 +1,6 @@
 package com.party.parthverma.collegeapp;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -43,7 +44,7 @@ public class Notifications extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(),this);
 
 
         mViewPager = (ViewPager) findViewById(R.id.notif_container);
@@ -72,45 +73,44 @@ public class Notifications extends AppCompatActivity {
         }
 
         @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            int mPage = getArguments().getInt(ARG_SECTION_NUMBER);
+        }
+
+
+        @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.notifis_from_principal, container, false);
-            return rootView;
+            return inflater.inflate(R.layout.notifis_from_principal, container, false);
         }
     }
 
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        final int PAGE_COUNT = 1;
+        private String tabTitles[] = new String[] { "Tab1", "Tab2", "Tab3" };
+        private Context context;
+
+        public SectionsPagerAdapter(FragmentManager fm,Context context) {
             super(fm);
+            this.context=context;
         }
 
         @Override
         public Fragment getItem(int position) {
-            switch(position) {
-                case 0:
                     return PlaceholderFragment.newInstance(position + 1);
-            }
-            return null;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return PAGE_COUNT;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
+            return tabTitles[position];
         }
     }
 }
