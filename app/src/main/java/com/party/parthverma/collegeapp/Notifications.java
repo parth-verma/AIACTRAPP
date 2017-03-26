@@ -1,6 +1,7 @@
 package com.party.parthverma.collegeapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,13 +14,25 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Notifications extends AppCompatActivity {
 
@@ -59,6 +72,8 @@ public class Notifications extends AppCompatActivity {
     public static class PlaceholderFragment extends Fragment {
 
         private static final String ARG_SECTION_NUMBER = "section_number";
+        ListView listView;
+        ArrayList<Notification> notifications;
 
         public PlaceholderFragment() {
         }
@@ -82,7 +97,37 @@ public class Notifications extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.notifis_from_principal, container, false);
+            View view =  inflater.inflate(R.layout.notifis_from_principal, container, false);
+            listView = (ListView) view.findViewById(R.id.notif_list);
+            notifications = new ArrayList<>();
+            FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference notifs = database.getReference("notifications/principal");
+            notifs.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Notification x;
+                    for (DataSnapshot notifSnapshot: dataSnapshot.getChildren())
+                    {
+                        x = notifSnapshot.getValue(Notification.class);
+                        notifications.add(x);
+                    }
+                    ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    Log.d("paaa",databaseError.getMessage());
+                }
+            });
+
+            NotificationsAdapter adapter = new NotificationsAdapter(view.getContext(),notifications);
+            listView.setAdapter(adapter);
+
+
+            return view;
+
         }
     }
 
