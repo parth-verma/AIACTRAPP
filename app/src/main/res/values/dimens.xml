@@ -6,4 +6,6 @@
     <dimen name="contacts_number_size">20sp</dimen>
     <dimen name="contacts_card_bottom_margin">10dp</dimen>
     <integer name="numColumns">2</integer>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
 </resources>
