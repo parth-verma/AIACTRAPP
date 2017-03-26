@@ -33,7 +33,7 @@ public class Notifications extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar123);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.notif_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Notifications");
 
@@ -46,10 +46,10 @@ public class Notifications extends AppCompatActivity {
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager = (ViewPager) findViewById(R.id.notif_container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.notif_tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
 
