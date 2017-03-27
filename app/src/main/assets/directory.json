@@ -1,0 +1,58 @@
+{
+  "directory": [
+    {
+      "name": "CSE 1st Year",
+      "room_number": "H-201",
+      "floor": "1st",
+      "block": "H"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    },
+    {
+      "name": "Room Name",
+      "room_number": "Room Number",
+      "floor": "Floor",
+      "block": "Block"
+    }
+  ]
+}
