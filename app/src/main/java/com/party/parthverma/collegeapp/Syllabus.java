@@ -148,7 +148,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse1));
                     request.setTitle("CSE 1st Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -170,7 +170,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse2));
                     request.setTitle("CSE 2nd Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -193,7 +193,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse3));
                     request.setTitle("CSE 3rd Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -215,7 +215,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse4));
                     request.setTitle("CSE 4th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -237,7 +237,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse5));
                     request.setTitle("CSE 5th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -259,7 +259,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse6));
                     request.setTitle("CSE 6th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -281,7 +281,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse7));
                     request.setTitle("CSE 7th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -303,7 +303,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse8));
                     request.setTitle("CSE 8th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -365,7 +365,7 @@ public class Syllabus extends AppCompatActivity {
                     /*DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece1));
                     request.setTitle("ECE 1st Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -395,7 +395,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece2));
                     request.setTitle("ECE 2nd Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI  | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -417,7 +417,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece3));
                     request.setTitle("ECE 3rd Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -439,7 +439,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece4));
                     request.setTitle("ECE 8th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -461,7 +461,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece5));
                     request.setTitle("ECE 5th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -483,7 +483,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece6));
                     request.setTitle("ECE 6th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -505,7 +505,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece7));
                     request.setTitle("ECE 7th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
@@ -527,7 +527,7 @@ public class Syllabus extends AppCompatActivity {
                     DownloadManager.Request request = new DownloadManager.Request(Uri.parse(ece8));
                     request.setTitle("ECE 8th Semester");
                     //request.setDescription("");
-                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
+                    request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
                     request.allowScanningByMediaScanner();
                     request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
 
