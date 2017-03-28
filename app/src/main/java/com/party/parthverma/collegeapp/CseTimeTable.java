@@ -40,7 +40,7 @@ public class CseTimeTable extends Fragment {
         View rootView = inflater.inflate(R.layout.time_table_cse, container, false);
 
         listView = (ListView) rootView.findViewById(R.id.timetable_cse);
-        final ArrayList<TimeTableCse> timetableList = TimeTableCse.getTimeTableCse(getActivity());
+        final ArrayList<TimeTableCse> timetableList = TimeTableCse.getTimeTableCse(getContext());
         TimeTableAdapter adapter = new TimeTableAdapter(getActivity(), timetableList);
         listView.setAdapter(adapter);
 
