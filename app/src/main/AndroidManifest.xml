@@ -78,7 +78,12 @@
         <activity
             android:name=".Notifications"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+            <action android:name="NOTIF" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter></activity>
+
     </application>
 
 </manifest>

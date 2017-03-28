@@ -4,10 +4,12 @@ import android.app.Notification;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.crash.FirebaseCrash;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fbDatabase = FirebaseDatabase.getInstance();
-        fbDatabase.setPersistenceEnabled(true);
+        try {
+            fbDatabase.setPersistenceEnabled(true);
+        }
+        catch (DatabaseException s)
+        {
+            Log.d("ERROR",s.getMessage());
+        }
 
     }
     public void goToActivityContact (View view) {

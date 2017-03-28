@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -50,6 +51,8 @@ public class Notifications extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.notif_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Notifications");
+
+
 
 
 
@@ -101,6 +104,13 @@ public class Notifications extends AppCompatActivity {
             listView = (ListView) view.findViewById(R.id.notif_list);
             notifications = new ArrayList<>();
             FirebaseDatabase database = FirebaseDatabase.getInstance();
+            try {
+                database.setPersistenceEnabled(true);
+            }
+            catch (DatabaseException s)
+            {
+                Log.d("ERROR",s.getMessage());
+            }
             DatabaseReference notifs = database.getReference("notifications/principal");
             notifs.addValueEventListener(new ValueEventListener() {
                 @Override
