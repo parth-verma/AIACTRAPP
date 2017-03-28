@@ -85,7 +85,6 @@ public class Syllabus extends AppCompatActivity {
 
 
             }
-            //return PlaceholderFragment.newInstance(position + 1);
             return null;
         }
 
@@ -382,8 +381,8 @@ public class Syllabus extends AppCompatActivity {
                     /*Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(Uri.parse( "http://docs.google.com/viewer?url=" + ece1), "text/html");
                     startActivity(intent);*/
-                    Intent intent = new Intent( v.getContext(), Web.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent( v.getContext(), Web.class);
+                    startActivity(intent);*/
                 }
             });
 

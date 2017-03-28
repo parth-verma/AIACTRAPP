@@ -66,11 +66,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Web" />
         <activity
             android:name=".TimeTable"
-            android:label="@string/title_activity_time_table"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Zoom" />
+        <activity android:name=".CseTimeTableDetails"></activity>
     </application>
 
 </manifest>

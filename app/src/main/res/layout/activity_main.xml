@@ -16,12 +16,12 @@
         android:layout_height="wrap_content"
         android:text="Contact"
         android:onClick="goToActivityContact"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="About"
-            android:onClick="goToActivityAbout"
-            android:id="@+id/collapsingToolbar"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:onClick="goToActivityAbout"
+        android:id="@+id/collapsingToolbar"/>
 
     <Button
         android:layout_width="match_parent"
@@ -38,4 +38,9 @@
         android:layout_height="wrap_content"
         android:text="Syllabus"
         android:onClick="goToActivitySyllabus"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Time Table"
+        android:onClick="goToActivityTimeTable"/>
 </LinearLayout>

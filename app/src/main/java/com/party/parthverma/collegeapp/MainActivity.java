@@ -36,5 +36,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Syllabus.class);
         startActivity(intent);
     }
+    public void goToActivityTimeTable (View view) {
+        Intent intent = new Intent(this, TimeTable.class);
+        startActivity(intent);
+    }
 
 }
