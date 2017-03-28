@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawerlayout1">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorlayout"
@@ -13,20 +12,21 @@
         app:expandedTitleMarginStart="70dp">
 
         <android.support.design.widget.AppBarLayout
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/MyAppbar"
             android:layout_width="fill_parent"
             android:layout_height="230dp"
-            android:id="@+id/MyAppbar">
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/CollapsingToolbarLayout1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                app:contentScrim="@color/actionBar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
-                    android:layout_width="match_parent"
                     android:id="@+id/college_image"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop" />
 
@@ -34,10 +34,11 @@
                     android:id="@+id/toolbar1"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    android:minHeight="?attr/actionBarSize"
+                    android:titleTextColor="@color/actionBarText"
                     app:layout_collapseMode="pin"
-                    android:minHeight="?attr/actionBarSize"/>
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -52,31 +53,33 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp">
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="About Text"
                     android:id="@+id/about"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    />
+                    android:text="About Text"
+                    android:textColor="@color/desctext"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
+
         <android.support.design.widget.FloatingActionButton
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/fabButton"
             android:onClick="goToActivityContact1"
             android:src="@drawable/ic_call_white_24px"
-            android:layout_margin="16dp"
             app:layout_anchor="@id/MyAppbar"
-            app:layout_anchorGravity="bottom|end"/>
+            app:layout_anchorGravity="bottom|end" />
 
     </android.support.design.widget.CoordinatorLayout>
 

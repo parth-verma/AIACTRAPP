@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_clubs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Faculties"
     android:background="@color/listBackground"
-    >
+    android:orientation="vertical"
+    tools:context=".Faculties">
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="@color/actionBar"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="@color/actionBarText" />
+
     <com.party.parthverma.collegeapp.AutoMeasureGridView
 
+        android:id="@+id/faculty_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:drawingCacheQuality="high"
-        android:numColumns="2"
-        android:verticalSpacing="8dp"
-        android:horizontalSpacing="16dp"
         android:gravity="center"
-        android:id="@+id/faculty_list"
-        >
+        android:horizontalSpacing="16dp"
+        android:numColumns="2"
+        android:verticalSpacing="8dp">
 
     </com.party.parthverma.collegeapp.AutoMeasureGridView>
 </LinearLayout>
