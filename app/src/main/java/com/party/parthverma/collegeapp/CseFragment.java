@@ -8,8 +8,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by harshit on 27/3/17.
@@ -17,16 +22,7 @@ import android.widget.Toast;
 
 public class CseFragment extends Fragment {
 
-
-    String  cse1 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%201.pdf?alt=media&token=d1e36cb7-e993-4656-8d40-75c0eab26ab7",
-            cse2 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%202.pdf?alt=media&token=98ea0c64-3399-486f-b86f-1076ed2b08b3",
-            cse3 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%203%20sem.pdf?alt=media&token=63361837-b06a-46d6-b32e-ba22c9a63317",
-            cse4 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%204th%20sem.pdf?alt=media&token=ba06d2c6-0c95-492a-893a-239cdae0bb6e",
-            cse5 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%205th%20sem.pdf?alt=media&token=c664ba58-deb1-479c-ad86-49bb257c1f1a",
-            cse6 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%205th%20sem.pdf?alt=media&token=c664ba58-deb1-479c-ad86-49bb257c1f1a",
-            cse7 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%207th%20sem.pdf?alt=media&token=d6ecf49d-d241-4edb-a875-f83f204eb904",
-            cse8 = "https://firebasestorage.googleapis.com/v0/b/aiactrapp.appspot.com/o/Syllabus%20CSE%2Fcse%208th%20sem.pdf?alt=media&token=024d9ffd-bcbf-47f7-a0fc-d911c2497342";
-
+    ListView listView;
     private static final String ARG_SECTION_NUMBER = "section_number";
 
 
@@ -46,182 +42,19 @@ public class CseFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_cse, container, false);
 
-        Button b1 = (Button) rootView.findViewById(R.id.cse_1);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse1));
-                request.setTitle("CSE 1st Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        String[] values = new String[] { "Android", "iPhone", "WindowsMobile",
+                "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
+                "Linux", "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux",
+                "OS/2", "Ubuntu", "Windows7", "Max OS X", "Linux", "OS/2",
+                "Android", "iPhone", "WindowsMobile" };
 
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b2 = (Button) rootView.findViewById(R.id.cse_2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse2));
-                request.setTitle("CSE 2nd Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-
-        Button b3 = (Button) rootView.findViewById(R.id.cse_3);
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse3));
-                request.setTitle("CSE 3rd Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b4 = (Button) rootView.findViewById(R.id.cse_4);
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse4));
-                request.setTitle("CSE 4th Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b5 = (Button) rootView.findViewById(R.id.cse_5);
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse5));
-                request.setTitle("CSE 5th Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b6 = (Button) rootView.findViewById(R.id.cse_6);
-        b6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse6));
-                request.setTitle("CSE 6th Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b7 = (Button) rootView.findViewById(R.id.cse_7);
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse7));
-                request.setTitle("CSE 7th Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
-        Button b8 = (Button) rootView.findViewById(R.id.cse_8);
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(cse8));
-                request.setTitle("CSE 8th Semester");
-                //request.setDescription("");
-                request.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI | DownloadManager.Request.NETWORK_MOBILE);
-                request.allowScanningByMediaScanner();
-                request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-
-                //String name = URLUtil.guessFileName(url, null, MimeTypeMap.getFileExtensionFromUrl(url));
-                //request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, name);
-
-
-                DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
-                manager.enqueue(request);
-                Toast.makeText(getContext(), "Dowmload Started", Toast.LENGTH_LONG).show();
-            }
-        });
-
+        final ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < values.length; ++i) {
+            list.add(values[i]);
+        }
+        final StableArrayAdapter adapter = new StableArrayAdapter(this,
+                android.R.layout.simple_list_item_1, list);
+        listview.setAdapter(adapter);
 
 
 

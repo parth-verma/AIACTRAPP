@@ -7,46 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_1"
-        android:text="CSE 1st Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_2"
-        android:text="CSE 2nd Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_3"
-        android:text="CSE 3rd Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_4"
-        android:text="CSE 4th Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_5"
-        android:text="CSE 5th Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_6"
-        android:text="CSE 6th Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_7"
-        android:text="CSE 7th Semester"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cse_8"
-        android:text="CSE 8th Semester"/>
+        android:layout_height="match_parent"
+        android:id="@+id/cse_syllabus_list">
+
+    </ListView>
+
 
 
 
