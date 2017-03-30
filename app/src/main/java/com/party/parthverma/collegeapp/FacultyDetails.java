@@ -1,9 +1,9 @@
 package com.party.parthverma.collegeapp;
 
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 public class FacultyDetails extends AppCompatActivity {
-    TextView description,name, designation, qualification,email,phone;
+    TextView description, name, designation, qualification, email, phone;
     ImageView facultyImage;
     Toolbar toolbar;
     CollapsingToolbarLayout collapsingToolbarLayout;

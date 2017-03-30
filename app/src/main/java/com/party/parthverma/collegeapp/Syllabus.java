@@ -1,29 +1,16 @@
 package com.party.parthverma.collegeapp;
 
-import android.app.DownloadManager;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
 public class Syllabus extends AppCompatActivity {
-
-
 
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
@@ -60,9 +47,6 @@ public class Syllabus extends AppCompatActivity {
     }
 
 
-
-
-
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
@@ -71,17 +55,17 @@ public class Syllabus extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch(position) {
+            switch (position) {
                 case 0:
-                    return CseFragment.newInstance(position+1);
+                    return CseFragment.newInstance(position + 1);
 
 
                 case 1:
-                    return EceFragment.newInstance(position+1);
+                    return EceFragment.newInstance(position + 1);
 
 
                 case 2:
-                    return MtechFragment.newInstance(position+1);
+                    return MtechFragment.newInstance(position + 1);
 
 
             }

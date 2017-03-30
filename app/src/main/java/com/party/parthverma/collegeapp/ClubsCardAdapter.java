@@ -17,7 +17,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.PriorityQueue;
 
 
 public class ClubsCardAdapter extends BaseAdapter {
@@ -50,7 +49,7 @@ public class ClubsCardAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        if(convertView == null) {
+        if (convertView == null) {
 
             // 2
             convertView = inflater.inflate(R.layout.club_card_layout, parent, false);
@@ -58,13 +57,12 @@ public class ClubsCardAdapter extends BaseAdapter {
             // 3
             holder = new ViewHolder();
             holder.clubImage = (ImageView) convertView.findViewById(R.id.club_image);
-            holder.name= (TextView) convertView.findViewById(R.id.club_name);
+            holder.name = (TextView) convertView.findViewById(R.id.club_name);
             holder.type = (TextView) convertView.findViewById(R.id.club_type);
 
             // 4
             convertView.setTag(holder);
-        }
-        else{
+        } else {
             // 5
             holder = (ViewHolder) convertView.getTag();
         }
@@ -94,14 +92,14 @@ public class ClubsCardAdapter extends BaseAdapter {
 class Club {
     String name, type, desc, image_loc;
 
-    public Club(String name,String type,String desc,String image_loc)
-    {
-        this.name=name;
-        this.type=type;
+    public Club(String name, String type, String desc, String image_loc) {
+        this.name = name;
+        this.type = type;
         this.desc = desc;
         this.image_loc = image_loc;
 
     }
+
     static private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
@@ -127,12 +125,11 @@ class Club {
 
     }
 
-    public static ArrayList<Club> getClubs(Context context)
-    {
+    public static ArrayList<Club> getClubs(Context context) {
         JSONObject obj;
         try {
             obj = new JSONObject(loadJSONFromAsset(context));
-        }catch (JSONException ex){
+        } catch (JSONException ex) {
             ex.printStackTrace();
             return null;
         }
@@ -141,21 +138,18 @@ class Club {
 
 
             club = obj.getJSONArray("clubs");
-        }catch (JSONException ex)
-        {
+        } catch (JSONException ex) {
             ex.printStackTrace();
             return null;
         }
         ArrayList<Club> clubs = new ArrayList<Club>();
 
-        for (int i=0;i< club.length() ;i++)
-        {
+        for (int i = 0; i < club.length(); i++) {
             Club x;
             try {
                 JSONObject jo = club.getJSONObject(i);
-                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"),jo.getString("main_image_url"));
-            }catch (JSONException ex)
-            {
+                x = new Club(jo.getString("name"), jo.getString("type"), jo.getString("desc"), jo.getString("main_image_url"));
+            } catch (JSONException ex) {
                 ex.printStackTrace();
                 return null;
             }

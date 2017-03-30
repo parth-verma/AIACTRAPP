@@ -45,7 +45,7 @@ public class About extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Log.d("Parth","inside on OptionsItemSeleceted");
+        Log.d("Parth", "inside on OptionsItemSeleceted");
         if (item.getItemId() == android.R.id.home)
             finish();
         return super.onOptionsItemSelected(item);

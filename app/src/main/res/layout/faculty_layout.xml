@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.party.parthverma.collegeapp.GridViewItemLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.party.parthverma.collegeapp.GridViewItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/cardBackground"
     android:elevation="5dp">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardBackground"
+        android:orientation="vertical"
+        android:paddingBottom="16dp">
+
+
+        <ImageView
+            android:id="@+id/faculty_image"
+            android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
-            android:paddingBottom="16dp"
-            android:background="@color/cardBackground"
-            >
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:adjustViewBounds="true"
+            android:fadingEdge="none"
+            android:scaleType="centerInside"
 
+            />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/fac_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/faculty_image"
+            android:paddingBottom="12dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="24dp"
+            android:text="Faculty Name"
+            android:textSize="20sp" />
 
-                android:id="@+id/faculty_image"
-                android:adjustViewBounds="true"
-                android:scaleType="centerInside"
-                android:fadingEdge="none"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Faculty Name"
-                android:id="@+id/fac_name"
-                android:textSize="20sp"
-                android:paddingTop="24dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="12dp"
-                android:layout_below="@+id/faculty_image"
-                android:layout_alignParentStart="true" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/fac_desg"
-                android:textSize="14sp"
-                android:gravity="bottom"
-                android:text="Faculty Post"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true"
-                android:layout_below="@id/fac_name"
-                />
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/fac_desg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/fac_name"
+            android:gravity="bottom"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:text="Faculty Post"
+            android:textSize="14sp" />
+    </RelativeLayout>
 </com.party.parthverma.collegeapp.GridViewItemLayout>

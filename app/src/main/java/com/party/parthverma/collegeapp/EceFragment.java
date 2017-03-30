@@ -1,28 +1,21 @@
 package com.party.parthverma.collegeapp;
 
-import android.app.DownloadManager;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 
 public class EceFragment extends Fragment {
 
+    private static final String ARG_SECTION_NUMBER = "section_number";
     ListView listView;
 
-
-    private static final String ARG_SECTION_NUMBER = "section_number";
+    public EceFragment() {
+    }
 
     public static EceFragment newInstance(int sectionNumber) {
         EceFragment fragment = new EceFragment();
@@ -32,34 +25,25 @@ public class EceFragment extends Fragment {
         return fragment;
     }
 
-    public EceFragment() {
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.activity_ece, container, false);
+        View rootView = inflater.inflate(R.layout.activity_cse, container, false);
+        listView = (ListView) rootView.findViewById(R.id.cse_syllabus_list);
 
+        String[] values = new String[]{"Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"};
 
-        listView = (ListView) rootView.findViewById(R.id.ece_syllabus_list);
-        final ArrayList<FuckingSyllabus> FuckingSyllabus.getSyllabus(this);
-        SyllabusAdapter adapter = new SyllabusAdapter(this, syllabusList);
+        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, values);
         listView.setAdapter(adapter);
-
-        final Context context = getContext();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                // start download here
             }
         });
 
 
-
-
-
-
         return rootView;
-}
+    }
 }
