@@ -24,8 +24,8 @@ public class AutoMeasureGridView extends GridView {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        if(changed) {
-            FacultyCardAdapter adapter = (FacultyCardAdapter)getAdapter();
+        if (changed) {
+            FacultyCardAdapter adapter = (FacultyCardAdapter) getAdapter();
 
             int numColumns = 2;
             GridViewItemLayout.initItemLayout(numColumns, adapter.getCount());

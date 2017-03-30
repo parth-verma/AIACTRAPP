@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerlayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawerlayout1">
+    android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorlayout"
@@ -13,9 +12,9 @@
         app:expandedTitleMarginStart="70dp">
 
         <android.support.design.widget.AppBarLayout
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_width="fill_parent"
-            android:layout_height="230dp">
+            android:layout_height="230dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/CollapsingToolbarLayout1"
@@ -24,20 +23,19 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
-                    android:layout_width="match_parent"
                     android:id="@+id/club_image"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    />
+                    android:scaleType="centerCrop" />
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar1"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    android:minHeight="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    android:minHeight="?attr/actionBarSize"/>
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -52,20 +50,18 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp">
+                android:orientation="vertical">
 
                 <TextView
-                    android:text="Club Description"
                     android:id="@+id/club_desc"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    />
-
+                    android:text="Club Description"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
             </LinearLayout>

@@ -1,13 +1,9 @@
 package com.party.parthverma.collegeapp;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.app.SearchManager;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
 
 public class SampleSearchActivity extends Activity {
 
