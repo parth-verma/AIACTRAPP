@@ -14,13 +14,12 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="fill_parent"
             android:layout_height="230dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            >
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/CollapsingToolbarLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="@color/actionBar"
 
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -37,9 +36,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:minHeight="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                    app:titleTextColor="@color/actionBarText" />
+                    />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -67,7 +64,7 @@
                     android:layout_marginTop="5dp"
                     android:text="Name"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/subtitleText"
+
                     android:textSize="24dp" />
 
                 <TextView
@@ -76,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:text="Designation"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textColor="@color/subtitleText"
+
                     android:textSize="16dp" />
 
                 <TextView
@@ -85,14 +82,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:text="Qualification"
-                    android:textColor="@color/subtitleText" />
+                    />
 
                 <TextView
                     android:id="@+id/faculty_desc"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="Description"
-                    android:textColor="@color/desctext" />
+                    android:text="Description" />
 
                 <TextView
                     android:id="@+id/faculty_mail"
@@ -100,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:autoLink="email"
                     android:text="E-mail "
-                    android:textColor="@color/subtitleText" />
+                    />
 
                 <TextView
                     android:id="@+id/faculty_phone"
@@ -108,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:autoLink="phone"
                     android:text="Phone"
-                    android:textColor="@color/subtitleText" />
+                    />
 
 
             </LinearLayout>

@@ -13,11 +13,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/actionBar"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:titleTextColor="@color/actionBarText" />
+        android:elevation="4dp" />
 
     <ListView
         android:id="@+id/list_of_clubs"

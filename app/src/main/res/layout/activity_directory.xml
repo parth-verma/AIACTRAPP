@@ -13,11 +13,8 @@
         android:id="@+id/directory_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/actionBar"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        android:titleTextColor="@color/actionBarText"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        android:elevation="4dp"/>
 
     <ListView
         android:id="@+id/list_of_directory"

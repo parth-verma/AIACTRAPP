@@ -14,13 +14,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/actionBar"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-
-        android:titleTextColor="@color/actionBarText"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
+        android:elevation="4dp"/>
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -60,14 +54,14 @@
                             android:layout_height="wrap_content"
                             android:autoLink="phone"
                             android:text="@string/principal_phone"
-                            android:textColor="@color/titleText"
+
                             android:textSize="@dimen/contacts_number_size" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/principal_title"
-                            android:textColor="@color/subtitleText" />
+                            />
 
                     </LinearLayout>
 
@@ -82,14 +76,13 @@
                             android:layout_height="wrap_content"
                             android:autoLink="phone"
                             android:text="@string/admin_phone"
-                            android:textColor="@color/titleText"
+
                             android:textSize="@dimen/contacts_number_size" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/admin_title"
-                            android:textColor="@color/subtitleText" />
+                            android:text="@string/admin_title" />
 
                     </LinearLayout>
 
@@ -104,14 +97,14 @@
                             android:layout_height="wrap_content"
                             android:autoLink="phone"
                             android:text="@string/os_phone"
-                            android:textColor="@color/titleText"
+
                             android:textSize="@dimen/contacts_number_size" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/os_title"
-                            android:textColor="@color/subtitleText" />
+                            />
                     </LinearLayout>
 
                     <LinearLayout
@@ -125,14 +118,14 @@
                             android:layout_height="wrap_content"
                             android:autoLink="phone"
                             android:text="@string/tnp_phone"
-                            android:textColor="@color/titleText"
+
                             android:textSize="@dimen/contacts_number_size" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/tnp_title"
-                            android:textColor="@color/subtitleText" />
+                             />
 
                     </LinearLayout>
 
@@ -168,14 +161,14 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:text="@string/college_email"
-                        android:textColor="@color/titleText"
+
                         android:textSize="@dimen/contacts_number_size" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/email_tag"
-                        android:textColor="@color/subtitleText" />
+                        />
 
 
                 </LinearLayout>
@@ -213,14 +206,14 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:text="@string/college_address"
-                        android:textColor="@color/titleText"
+
                         android:textSize="@dimen/contacts_number_size" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/address_tag"
-                        android:textColor="@color/subtitleText" />
+                        />
 
                 </LinearLayout>
 
@@ -259,14 +252,14 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
                         android:text="@string/college_website"
-                        android:textColor="@color/titleText"
+
                         android:textSize="@dimen/contacts_number_size" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/website_tag"
-                        android:textColor="@color/subtitleText" />
+                        />
 
 
                 </LinearLayout>
