@@ -18,8 +18,9 @@ public class Directory extends AppCompatActivity {
         setContentView(R.layout.activity_directory);
 
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.directory_toolbar);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.actionBarText));
         getSupportActionBar().setTitle("Directory");
 
         ActionBar ab = getSupportActionBar();

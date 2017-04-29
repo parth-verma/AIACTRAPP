@@ -22,6 +22,7 @@ public class Contact extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.actionBarText));
         getSupportActionBar().setTitle("Contact");
 
         ActionBar ab = getSupportActionBar();
