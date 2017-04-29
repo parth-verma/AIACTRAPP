@@ -63,7 +63,8 @@
         <activity
             android:name=".FacultyDetails"
             android:parentActivityName=".Faculties" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".Profile"></activity>
     </application>
 
 </manifest>
