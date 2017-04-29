@@ -14,20 +14,21 @@
         <android.support.design.widget.AppBarLayout
             android:layout_width="fill_parent"
             android:layout_height="230dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            >
 
             <android.support.design.widget.CollapsingToolbarLayout
                 android:id="@+id/CollapsingToolbarLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
-
                     android:id="@+id/faculty_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scaleType="center" />
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar2"
@@ -35,8 +36,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:minHeight="?attr/actionBarSize"
                     app:layout_collapseMode="pin"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+                    />
 
             </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -79,7 +79,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Qualification" />
+                    android:text="Qualification"
+                    />
+
 
                 <TextView
                     android:id="@+id/faculty_desc"
@@ -92,15 +94,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoLink="email"
-                    android:text="E-mail " />
+                    android:text="E-mail "
+                    />
 
                 <TextView
                     android:id="@+id/faculty_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autoLink="phone"
-                    android:text="Phone" />
-
+                    android:text="Phone"
+                    />
 
             </LinearLayout>
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,6 +23,7 @@ public class Contact extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.actionBarText));
         getSupportActionBar().setTitle("Contact");
 
         ActionBar ab = getSupportActionBar();
@@ -71,7 +71,6 @@ public class Contact extends AppCompatActivity {
             Toast.makeText(this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
 }

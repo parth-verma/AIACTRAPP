@@ -26,6 +26,7 @@ public class Faculties extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.actionBarText));
         getSupportActionBar().setTitle("Faculty Profile");
 
         ActionBar ab = getSupportActionBar();

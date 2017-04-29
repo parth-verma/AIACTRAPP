@@ -13,7 +13,6 @@
         card_view:cardElevation="5dp">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/cardBackground"
@@ -47,7 +46,6 @@
                     android:id="@+id/floor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:gravity="end"
                     android:text="Floor"
                     android:textSize="16sp" />

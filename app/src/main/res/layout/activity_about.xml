@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawerlayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    style="@style/AppTheme.NoActionBar">
 
     <android.support.design.widget.CoordinatorLayout
         android:id="@+id/coordinatorlayout"
@@ -13,7 +14,7 @@
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/MyAppbar"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="230dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -63,8 +64,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="About Text"
+                    android:textColor="@color/desctext"
                     android:textSize="16sp" />
-
 
             </LinearLayout>
 
@@ -74,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            style="@style/AppTheme"
             android:onClick="goToActivityContact1"
             android:src="@drawable/ic_call_white_24px"
             app:layout_anchor="@id/MyAppbar"

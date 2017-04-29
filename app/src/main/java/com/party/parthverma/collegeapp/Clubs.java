@@ -2,7 +2,13 @@ package com.party.parthverma.collegeapp;
 
 import android.content.Context;
 import android.content.Intent;
+
 import android.os.Bundle;
+
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,10 +28,12 @@ public class Clubs extends AppCompatActivity {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+        myToolbar.setTitleTextColor(getResources().getColor(R.color.actionBarText));
         getSupportActionBar().setTitle("Clubs");
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
 
 
         listView = (ListView) findViewById(R.id.list_of_clubs);

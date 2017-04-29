@@ -11,7 +11,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,6 +30,7 @@
         </activity>
         <activity
             android:name=".Contact"
+            android:theme="@style/AppTheme"
             android:label="Contact"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -39,6 +40,7 @@
         <activity
             android:name=".Clubs"
             android:label="Clubs"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -47,13 +49,14 @@
         <activity
             android:name=".About"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
         <activity
             android:name=".ClubDetails"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".Clubs">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -61,15 +64,18 @@
         </activity>
         <activity
             android:name=".Faculties"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity">
 
         </activity>
         <activity
+            android:theme="@style/AppTheme"
             android:name=".FacultyDetails"
             android:parentActivityName=".Faculties">
 
         </activity>
         <activity android:name=".Directory"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".MainActivity"/>
 
         <activity

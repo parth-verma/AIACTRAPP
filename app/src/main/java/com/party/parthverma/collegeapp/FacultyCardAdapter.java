@@ -108,7 +108,6 @@ public class FacultyCardAdapter extends BaseAdapter {
         }
     }
 
-
     private static class ViewHolder {
         public TextView name;
         public TextView designation;
