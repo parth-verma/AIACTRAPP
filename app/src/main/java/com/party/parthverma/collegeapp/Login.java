@@ -1,9 +1,10 @@
 package com.party.parthverma.collegeapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -24,20 +25,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class Login extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener
-    {
+public class Login extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.OnConnectionFailedListener {
+    String TAG = "AIACTR1";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     //Signin button
     private SignInButton signInButton;
-
     //Signing Options
     private GoogleSignInOptions gso;
-
     //google api client
     private GoogleApiClient mGoogleApiClient;
     private int RC_SIGN_IN = 100;
-    String TAG = "AIACTR1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +78,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Go
             }
         };
     }
+
     @Override
     public void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
+
     @Override
     public void onStop() {
         super.onStop();
@@ -109,37 +109,45 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Go
         }
     }
 
-        private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
-            Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
+    private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
+        Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
 
-            AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-            mAuth.signInWithCredential(credential)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
 
-                            // If sign in fails, display a message to the user. If sign in succeeds
-                            // the auth state listener will be notified and logic to handle the
-                            // signed in user can be handled in the listener.
-                            if (!task.isSuccessful()) {
-                                Log.w(TAG, "signInWithCredential", task.getException());
-                                Toast.makeText(Login.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-                            }
-                            // ...
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "signInWithCredential", task.getException());
+                            Toast.makeText(Login.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
                         }
-                    });
-        }
+                        // ...
+                    }
+                });
+    }
 
-        //After the signing we are calling this function
+    //After the signing we are calling this function
     private void handleSignInResult(GoogleSignInResult result) {
         //If the login succeed
         Log.d(TAG, "handleSignInResult:" + result.isSuccess());
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
-            ((TextView)findViewById(R.id.textViewName)).setText(acct.getDisplayName());
+            ((TextView) findViewById(R.id.textViewName)).setText(acct.getDisplayName());
+
+            //save sign in data
+            SharedPreferences sharedPreferences = this.getSharedPreferences(getString(R.string.shared_preference_name), this.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("Name", acct.getDisplayName());
+            editor.putString("email", acct.getEmail());
+            editor.putString("display_pic", acct.getPhotoUrl().toString());
+            editor.apply();
 
         } else {
             // Signed out, show unauthenticated UI.
@@ -156,10 +164,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener, Go
             // ...
         }
     }
+
     private void signIn() {
-            Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
-            startActivityForResult(signInIntent, RC_SIGN_IN);
-        }
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
 
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {

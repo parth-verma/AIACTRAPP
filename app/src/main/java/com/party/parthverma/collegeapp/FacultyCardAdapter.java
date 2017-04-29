@@ -14,13 +14,12 @@ import com.squareup.picasso.Picasso;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-public class FacultyCardAdapter extends BaseAdapter{
+public class FacultyCardAdapter extends BaseAdapter {
 
 
     private Context context;
@@ -50,9 +49,9 @@ public class FacultyCardAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("Parth","Inside getView");
+        Log.d("Parth", "Inside getView");
         ViewHolder holder;
-        if(convertView == null) {
+        if (convertView == null) {
 
             // 2
             convertView = inflater.inflate(R.layout.faculty_layout, parent, false);
@@ -60,13 +59,12 @@ public class FacultyCardAdapter extends BaseAdapter{
             // 3
             holder = new ViewHolder();
             holder.facultyImage = (ImageView) convertView.findViewById(R.id.faculty_image);
-            holder.name= (TextView) convertView.findViewById(R.id.fac_name);
+            holder.name = (TextView) convertView.findViewById(R.id.fac_name);
             holder.designation = (TextView) convertView.findViewById(R.id.fac_desg);
 
             // 4
             convertView.setTag(holder);
-        }
-        else{
+        } else {
             // 5
             holder = (ViewHolder) convertView.getTag();
         }
@@ -83,24 +81,20 @@ public class FacultyCardAdapter extends BaseAdapter{
         return convertView;
 
     }
-    private static class ViewHolder {
-        public TextView name;
-        public TextView designation;
-        public ImageView facultyImage;
-    }
+
     public void measureItems(int columnWidth) {
-        Log.d("Parth","Inside measureItems");
+        Log.d("Parth", "Inside measureItems");
         // Obtain system inflater
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         // Inflate temp layout object for measuring
-        GridViewItemLayout itemView = (GridViewItemLayout)inflater.inflate(R.layout.faculty_layout, null);
+        GridViewItemLayout itemView = (GridViewItemLayout) inflater.inflate(R.layout.faculty_layout, null);
 
         // Create measuring specs
         int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(columnWidth, View.MeasureSpec.EXACTLY);
         int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
 
         // Loop through each data object
-        for(int index = 0; index < data_src.size(); index++) {
+        for (int index = 0; index < data_src.size(); index++) {
             Faculty item = data_src.get(index);
 
             // Set position and data
@@ -112,17 +106,19 @@ public class FacultyCardAdapter extends BaseAdapter{
             itemView.measure(widthMeasureSpec, heightMeasureSpec);
         }
     }
+
+    private static class ViewHolder {
+        public TextView name;
+        public TextView designation;
+        public ImageView facultyImage;
+    }
 }
 
 
-
-
-
 class Faculty {
-    String name, designation, description, qualification, email, phone,image_loc;
+    String name, designation, description, qualification, email, phone, image_loc;
 
-    public Faculty(String name,String designation,String description, String qualification, String email, String phone, String image_loc)
-    {
+    public Faculty(String name, String designation, String description, String qualification, String email, String phone, String image_loc) {
         this.name = name;
         this.designation = designation;
         this.description = description;
@@ -132,6 +128,7 @@ class Faculty {
         this.image_loc = image_loc;
 
     }
+
     static private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
@@ -157,12 +154,11 @@ class Faculty {
 
     }
 
-    public static ArrayList<Faculty> getFaculties(Context context)
-    {
+    public static ArrayList<Faculty> getFaculties(Context context) {
         JSONObject obj;
         try {
             obj = new JSONObject(loadJSONFromAsset(context));
-        }catch (JSONException ex){
+        } catch (JSONException ex) {
             ex.printStackTrace();
             return null;
         }
@@ -171,21 +167,18 @@ class Faculty {
 
 
             faculty = obj.getJSONArray("faculty");
-        }catch (JSONException ex)
-        {
+        } catch (JSONException ex) {
             ex.printStackTrace();
             return null;
         }
         ArrayList<Faculty> faculties = new ArrayList<Faculty>();
 
-        for (int i=0;i< faculty.length() ;i++)
-        {
+        for (int i = 0; i < faculty.length(); i++) {
             Faculty x;
             try {
                 JSONObject jo = faculty.getJSONObject(i);
                 x = new Faculty(jo.getString("name"), jo.getString("designation"), jo.getString("description"), jo.getString("qualification"), jo.getString("mail"), jo.getString("phone"), jo.getString("image_url"));
-            }catch (JSONException ex)
-            {
+            } catch (JSONException ex) {
                 ex.printStackTrace();
                 return null;
             }

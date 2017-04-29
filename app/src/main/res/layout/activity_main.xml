@@ -38,4 +38,9 @@
         android:layout_height="wrap_content"
         android:onClick="goToLogin"
         android:text="Login"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToProfile"
+        android:text="Profile"/>
 </LinearLayout>
