@@ -58,7 +58,7 @@ public class CseFragment extends Fragment {
         downloadManager = new ThinDownloadManager();
         String[] values = new String[]{"Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"};
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, values);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, values);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
