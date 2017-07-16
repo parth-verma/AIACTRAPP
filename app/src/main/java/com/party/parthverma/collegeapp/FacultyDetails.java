@@ -39,11 +39,10 @@ public class FacultyDetails extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
 
-        collapsingToolbarLayout.setTitle(faculty.name);
-
 
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayShowTitleEnabled(false);
 
         description.setText(faculty.description);
         name.setText(faculty.name);
