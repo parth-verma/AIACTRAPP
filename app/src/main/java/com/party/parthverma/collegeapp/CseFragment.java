@@ -65,42 +65,57 @@ public class CseFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 FirebaseStorage storage = FirebaseStorage.getInstance();
+                final String file_path = getContext().getExternalCacheDir().toString() + "/cse" + Integer.toString(position + 1) + ".pdf";
+                File file = new File(file_path);
                 posi = position;
-                final int pos = position;
-                StorageReference storageRef = storage.getReference();
-                Log.d("DOWNLOAD", Integer.toString(position));
-                storageRef.child("/Syllabus CSE/cse " + Integer.toString(position + 1) + ".pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Log.d("DOWNLOAD", uri.toString());
-                        Uri destinationUri = Uri.parse(getContext().getExternalCacheDir().toString() + "/cse" + Integer.toString(pos + 1) + ".pdf");
-                        DownloadRequest downloadRequest = new DownloadRequest(uri)
-                                .setRetryPolicy(new DefaultRetryPolicy())
-                                .setDestinationURI(destinationUri)
-                                .setStatusListener(new DownloadStatusListenerV1() {
-                                    @Override
-                                    public void onDownloadComplete(DownloadRequest downloadRequest) {
-                                        Log.d("DOWNLOAD", "complete");
-                                        String message = "Downloaded CSE " + Integer.toString(pos + 1) + " Syllabus";
-                                        Snackbar.make(getActivity().findViewById(android.R.id.content), message, 2000)
-                                                .setAction("Open", listener)
-                                                .setActionTextColor(Color.RED)
-                                                .show();
-                                    }
-
-                                    @Override
-                                    public void onDownloadFailed(DownloadRequest downloadRequest, int errorCode, String errorMessage) {
-                                        Log.d("DOWNLOADError", errorMessage);
-                                    }
-
-                                    @Override
-                                    public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
-                                        Log.d("Progress: ", Integer.toString(progress));
-                                    }
-                                });
-                        downloadManager.add(downloadRequest);
+                if (file.exists()){
+                    Log.d("OPENING",file.getAbsolutePath());
+                    Intent target = new Intent(Intent.ACTION_VIEW);
+                    target.setDataAndType(Uri.fromFile(file), "application/pdf");
+                    target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    Intent intent = Intent.createChooser(target, "Open File");
+                    try {
+                        startActivity(intent);
+                    } catch (ActivityNotFoundException e) {
+                        // Instruct the user to install a PDF reader here, or something
                     }
-                });
+                }
+                else {
+                    StorageReference storageRef = storage.getReference();
+                    Log.d("DOWNLOAD", Integer.toString(position));
+                    storageRef.child("/Syllabus CSE/cse " + Integer.toString(position + 1) + ".pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Log.d("DOWNLOAD", uri.toString());
+                            Uri destinationUri = Uri.parse(file_path);
+                            DownloadRequest downloadRequest = new DownloadRequest(uri)
+                                    .setRetryPolicy(new DefaultRetryPolicy())
+                                    .setDestinationURI(destinationUri)
+                                    .setStatusListener(new DownloadStatusListenerV1() {
+                                        @Override
+                                        public void onDownloadComplete(DownloadRequest downloadRequest) {
+                                            Log.d("DOWNLOAD", "complete");
+                                            String message = "Downloaded CSE " + Integer.toString(posi + 1) + " Syllabus";
+                                            Snackbar.make(getActivity().findViewById(android.R.id.content), message, 2000)
+                                                    .setAction("Open", listener)
+                                                    .setActionTextColor(Color.RED)
+                                                    .show();
+                                        }
+
+                                        @Override
+                                        public void onDownloadFailed(DownloadRequest downloadRequest, int errorCode, String errorMessage) {
+                                            Log.d("DOWNLOADError", errorMessage);
+                                        }
+
+                                        @Override
+                                        public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
+                                            Log.d("Progress: ", Integer.toString(progress));
+                                        }
+                                    });
+                            downloadManager.add(downloadRequest);
+                        }
+                    });
+                }
 
             }
         });
@@ -109,6 +124,7 @@ public class CseFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 File file = new File(getContext().getExternalCacheDir().toString() + "/cse" + Integer.toString(posi + 1) + ".pdf");
+                Log.d("DOWNLOAD",file.getAbsolutePath());
                 Intent target = new Intent(Intent.ACTION_VIEW);
                 target.setDataAndType(Uri.fromFile(file), "application/pdf");
                 target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

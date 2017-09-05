@@ -2,6 +2,7 @@ package com.party.parthverma.collegeapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +35,12 @@ public class MtechFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_mtech, container, false);
-        listView = (ListView) rootView.findViewById(R.id.cse_syllabus_list);
+        listView = (ListView) rootView.findViewById(R.id.mtech_syllabus_list);
 
         // change the number of semesters
         String[] values = new String[]{"Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6", "Semester 7", "Semester 8"};
-
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), android.R.layout.simple_list_item_1, values);
+        ArrayAdapter<String> adapter;
+        adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1,values);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

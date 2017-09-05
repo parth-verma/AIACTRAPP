@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.List;
 import java.util.Locale;
@@ -53,14 +54,18 @@ public class Contact extends AppCompatActivity {
         }
     }
 
-    public void goToMail(View view) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"contact@aiactr.ac.in"});
-        PackageManager packageManager = getPackageManager();
-        List activities = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
-        boolean isIntentSafe = activities.size() > 0;
-        if (isIntentSafe) {
-            startActivity(intent);
+
+    // for going to mail
+    public void sendEmail(View view) {
+        Intent emailIntent = new Intent(Intent.ACTION_SEND,Uri.parse("mailto: contact@aiactr.ac.in"));
+
+        emailIntent.setType("text/plain");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send E-mail"));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(this, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+
         }
 
     }
