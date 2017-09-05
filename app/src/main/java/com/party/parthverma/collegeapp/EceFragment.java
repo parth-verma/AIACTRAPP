@@ -61,41 +61,57 @@ public class EceFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 FirebaseStorage storage = FirebaseStorage.getInstance();
                 posi = position;
-                final int pos = position;
-                StorageReference storageRef = storage.getReference();
-                Log.d("DOWNLOAD", Integer.toString(position));
-                storageRef.child("/Syllabus ECE/ece " + Integer.toString(position + 1) + ".pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                    @Override
-                    public void onSuccess(Uri uri) {
-                        Log.d("DOWNLOAD", uri.toString());
-                        Uri destinationUri = Uri.parse(getContext().getExternalCacheDir().toString() + "/ece" + Integer.toString(pos + 1) + ".pdf");
-                        DownloadRequest downloadRequest = new DownloadRequest(uri)
-                                .setRetryPolicy(new DefaultRetryPolicy())
-                                .setDestinationURI(destinationUri)
-                                .setStatusListener(new DownloadStatusListenerV1() {
-                                    @Override
-                                    public void onDownloadComplete(DownloadRequest downloadRequest) {
-                                        Log.d("DOWNLOAD", "complete");
-                                        String message = "Downloaded ECE " + Integer.toString(pos + 1) + " Syllabus";
-                                        Snackbar.make(getActivity().findViewById(android.R.id.content), message, 2000)
-                                                .setAction("Open", listener)
-                                                .setActionTextColor(Color.RED)
-                                                .show();
-                                    }
-
-                                    @Override
-                                    public void onDownloadFailed(DownloadRequest downloadRequest, int errorCode, String errorMessage) {
-                                        Log.d("DOWNLOADError", errorMessage);
-                                    }
-
-                                    @Override
-                                    public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
-                                        Log.d("Progress: ", Integer.toString(progress));
-                                    }
-                                });
-                        downloadManager.add(downloadRequest);
+                final String file_path = getContext().getExternalCacheDir().toString() + "/ece" + Integer.toString(position + 1) + ".pdf";
+                File file = new File(file_path);
+                if (file.exists()){
+                    Log.d("OPENING",file.getAbsolutePath());
+                    Intent target = new Intent(Intent.ACTION_VIEW);
+                    target.setDataAndType(Uri.fromFile(file), "application/pdf");
+                    target.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    Intent intent = Intent.createChooser(target, "Open File");
+                    try {
+                        startActivity(intent);
+                    } catch (ActivityNotFoundException e) {
+                        // Instruct the user to install a PDF reader here, or something
                     }
-                });
+                }
+                else {
+                    final int pos = position;
+                    StorageReference storageRef = storage.getReference();
+                    Log.d("DOWNLOAD", Integer.toString(position));
+                    storageRef.child("/Syllabus ECE/ece " + Integer.toString(position + 1) + ".pdf").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            Log.d("DOWNLOAD", uri.toString());
+                            Uri destinationUri = Uri.parse(file_path);
+                            DownloadRequest downloadRequest = new DownloadRequest(uri)
+                                    .setRetryPolicy(new DefaultRetryPolicy())
+                                    .setDestinationURI(destinationUri)
+                                    .setStatusListener(new DownloadStatusListenerV1() {
+                                        @Override
+                                        public void onDownloadComplete(DownloadRequest downloadRequest) {
+                                            Log.d("DOWNLOAD", "complete");
+                                            String message = "Downloaded ECE " + Integer.toString(posi + 1) + " Syllabus";
+                                            Snackbar.make(getActivity().findViewById(android.R.id.content), message, 2000)
+                                                    .setAction("Open", listener)
+                                                    .setActionTextColor(Color.RED)
+                                                    .show();
+                                        }
+
+                                        @Override
+                                        public void onDownloadFailed(DownloadRequest downloadRequest, int errorCode, String errorMessage) {
+                                            Log.d("DOWNLOADError", errorMessage);
+                                        }
+
+                                        @Override
+                                        public void onProgress(DownloadRequest downloadRequest, long totalBytes, long downloadedBytes, int progress) {
+                                            Log.d("Progress: ", Integer.toString(progress));
+                                        }
+                                    });
+                            downloadManager.add(downloadRequest);
+                        }
+                    });
+                }
 
             }
         });
